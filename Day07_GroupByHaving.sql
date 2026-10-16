@@ -67,3 +67,34 @@ SELECT marks, COUNT(*)
 FROM students
 GROUP BY marks
 HAVING AVG(marks) > 70;
+
+/////////////////////////////////
+
+--Write an SQL query to display the number of students for each marks value, but show only those groups whose student count is greater than 2.
+
+Select marks , count(*) , sum(marks) as total_marks from students
+Group BY marks Having sum(marks) > 150;
+
+////////////////////////////////////////////////////////
+
+--Question: Write an SQL query to display each marks value and the average marks for that group. Show only groups whose average marks are greater than 80.
+
+
+SELECT marks, AVG(marks) AS average_marks
+FROM students
+GROUP BY marks
+HAVING AVG(marks) > 80;
+
+/////////////////////////////////////////////////////
+
+--HAVING with MIN()
+-- Question: Write an SQL query to display each marks value and the minimum marks in that group. Show only groups where the minimum marks are greater than 70.
+
+
+
+SELECT marks, MIN(marks) AS minimum_marks
+FROM students
+GROUP BY marks
+HAVING MIN(marks) > 70;
+
+////////////////////////////////////////
